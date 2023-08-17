@@ -1,0 +1,246 @@
+<header>
+    <section id="sec-header" class="w-100 p-4">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    <a class="navbar-brand me-2" href="/login">
+      <img
+        src="https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/homev2/goiy-1.png"
+        height="30"
+        width="30"
+        alt="MDB Logo"
+        loading="lazy"
+        style="margin-top: -1px;"
+      />
+    </a>
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarButtonsExample"
+      aria-controls="navbarButtonsExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+      <!-- Left links -->
+      <div class="col-xs-6 col-md-4">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Left links -->
+      <div class="col-xs-6 col-md-4">
+        <form class="d-flex input-group w-auto">
+          <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-addon"
+          />
+          <button id="search" type="submit" class="btn btn-info" ><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      
+      <div id="logreg" class="col-xs-1 col-md-1">
+        <div class="cart">
+            <a href="/login/cart" class="text-reset me-1">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+              <a class="dropdown-toggle hidden-arrow" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy" />
+              </a>
+              <h5>{{user.hoten}}</h5>
+              
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="margin-top:10px;">
+                
+                <a class="dropdown-item" href="/login/myprofile">My profile</a>
+                
+                <a class="dropdown-item" href="#">Settings</a>
+                <a class="dropdown-item" href="/">Logout</a>
+              </div>
+               
+          </div>
+      </div>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+</section>
+
+</header>
+
+<!-- body -->
+<body>
+
+  <section class="bg-dark py-4">
+    <div class="container">
+      <h2 class="text-white"></h2>
+    </div>
+  </section>
+<br>
+  <section class="padding-y"> 
+      <div class="container">
+          <div class="row">
+
+              <aside class="col-lg-6">
+                  <article class="gallery-wrap">
+                      <div class="img-big-wrap img-thumbnail">
+                          <a data-fslightbox="mygalley" data-type="image" href="{{course.thumbnail}}">
+                            <img width="630" height="560" src="{{course.thumbnail}}">
+                          </a>
+                      </div>
+                  </article>
+              </aside>
+
+              <main class="col-lg-6">
+                  <article class="ps-lg-3">
+                      <h4 class="title text-dark">
+                          {{course.name}}
+                      </h4>
+                      <br>
+                      <div class="mb-3">
+                          <h5>Giá:</h5>
+                          <var class="price h5" style="color:red">{{course.price}}</var>
+                      </div>
+                      <br><br><br>
+                      <p>
+                          {{course.mota}}
+                      </p>
+                      <hr>
+                      
+                      <a href="/login/{{course.slug}}/pay" class="btn btn-warning">Mua ngay</a>
+                      <a href="#" class="btn btn-primary">
+                          <i class="me-1 fa fa-shop-basket"></i>
+                          thêm vào giỏ hàng
+                      </a>
+
+                  </article>
+              </main>
+              
+          </div>
+      </div>
+  </section>
+  <br>
+
+  <section id="secproduct" class="padding-y bg-light border-top">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div role="card">
+                    <div class="tab-content">
+                        <article id="tab_specs" class="tab-pane show active card-body">
+                            <p>&nbsp;</p>
+                            <h2>
+                                <span style="font-size:22px;">
+                                    <strong>{{course.name}}</strong>
+                                </span>
+                            </h2>
+                            <p>
+                                <span style="font-size:18px;">
+                                    <strong>Thông số kỹ thuật:&nbsp;</strong>
+                                </span>
+                            </p>
+                            <table class="table border table-hover">
+                                <tbody>
+                                    <tr>
+                                        <th>Màn hình:</th>
+                                        <td>{{course.mh}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Hệ điều hành:</th>
+                                        <td>{{course.hdh}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Camera sau:</th>
+                                        <td>{{course.camS}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Camera trước:</th>
+                                        <td>{{course.camT}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Chip:</th>
+                                        <td>{{course.chip}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>RAM:</th>
+                                        <td>{{course.ram}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Bộ nhớ trong:</th>
+                                        <td>{{course.memory}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </article>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+</body>
+
+<!--footer-->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">Shop.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>

@@ -1,0 +1,174 @@
+
+
+<header>
+    <section class="w-100 p-4">
+<!-- Navbar -->
+      <nav class="navbar navbar-expand-lg gy-3">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Navbar brand -->
+          <a class="navbar-brand me-2" href="/">
+            <img
+              src="https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/homev2/goiy-1.png"
+              height="30"
+              width="30"
+              alt="MDB Logo"
+              loading="lazy"
+              style="margin-top: -1px;"
+            />
+          </a>
+
+          <!-- Toggle button -->
+          <button
+            id = "menu"
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarButtonsExample"
+            aria-controls="navbarButtonsExample"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarButtonsExample">
+            <!-- Left links -->
+            <div class="col-xs-6 col-md-4">
+              
+              
+            </div>
+            
+            <!-- Left links -->
+            <div class="col-xs-6 col-md-4">
+              <form class="d-flex input-group w-auto" action="/admin/searchadmin" method="GET">
+                <input
+                    name="searchadmin" 
+                    type="text"
+                    id="searchadmin"
+                    class="form-control rounded"
+                    {{!-- placeholder="Tìm sản phẩm..." --}}
+                    aria-label="Search"
+                    aria-describedby="search-addon"
+                />
+                <button id="searchadmin" type="submit" class="btn btn-info" ><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+            
+            <div id="logreg" class="col-xs-3 col-md-3 flex align-items-center">
+              <button type="button" class="btn btn-link px-3 me-2" ><a class="nav-link" href="/admin/create">Create</a></button>
+              <button type="button" class="btn btn-primary me-3" ><a class="nav-link" href="admin/edit" style="color: white;">Edit</a></button>
+            </div>
+          </div>
+          <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+<!-- Navbar -->
+    </section>
+
+{{!--Search--}}
+<script>
+  function myFunction() {
+     
+  }
+</script>
+
+<!-- The Modal Login-->
+
+
+
+      <!-- The Modal Sign up-->
+      
+</header>
+
+<!-- body -->
+<body>
+
+  <section class="">
+    <center><h1> TRANG ADMIN</h1></center>
+  </section>
+
+  <section class="padding-y">
+    <div class="container">
+      <header class="secion-heading mt-3">
+        <h3 class="section-title">Sản phẩm</h3>
+      </header>
+      <br>
+      <div class="row">
+
+        {{#each courses}}
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <figure class="card card-product-grid">
+            <div class="img-wrap">
+              <a href="/home/{{this.slug}}" class=""><img width="308" height="240" src="{{this.thumbnail}}" alt="{{this.name}}"></a>
+            </div>
+            <figcaption class="info-wrap border-top" style="text-align:center;">
+              <a href="/home/{{this.slug}}"><p class="title mb-2">{{this.name}}</p></a>
+              <div class="price-wrap">
+                <span class="price" style="color:red;">{{this.price}}</span>
+              </div>
+              <a href="/home/{{this.slug}}" class="btn btn-primary mt-5" style="display:inline-block;">Xem sản phẩm</a>
+            </figcaption>
+          </figure>
+        </div>
+        {{/each}}
+
+      </div>
+    </div>
+  </section>
+        
+      </div>
+    </div>
+  </div>
+</body>
+
+<!--footer-->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">Shop.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+

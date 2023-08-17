@@ -1,0 +1,148 @@
+<header>
+    <section id="sec-header" class="w-100 p-4">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    <a class="navbar-brand me-2" href="https://mdbgo.com/">
+      <img
+        src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+        height="16"
+        alt="MDB Logo"
+        loading="lazy"
+        style="margin-top: -1px;"
+      />
+    </a>
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarButtonsExample"
+      aria-controls="navbarButtonsExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+      <!-- Left links -->
+      <div class="col-xs-6 col-md-4">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Dashboard</a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Left links -->
+      <div class="col-xs-6 col-md-4">
+        <form class="d-flex input-group w-auto">
+          <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-addon"
+          />
+          <span class="input-group-text text-gray border-0" id="search-addon">
+            <i class="fas fa-search"></i>
+          </span>
+        </form>
+      </div>
+      
+      <div id="logreg" class="col-xs-1 col-md-1">
+            <div class="dropdown show">
+                <a class="dropdown-toggle hidden-arrow" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy" />
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="margin-top:10px;">
+                    <a class="dropdown-item" href="/login/myprofile">My profile</a>
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="/">Logout</a>
+                </div>
+            </div>
+      </div>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+</section>
+
+<body style="text-align: center;">
+<h2 style="color: red;">THÔNG TIN USER</h2>
+<form action="/login/myprofile" method="GET" style="text-align: left;">
+    <h4>Họ và tên:</h4> <input type="text" placeholder="Nhập họ và tên"><br> 
+    <hr>
+    <h4>Ngày sinh:</h4> <input type="date"><br>
+    <hr>
+    <h4>Số điện thoại:</h4> <input type="text" placeholder="Nhập số điện thoại"><br>
+    <hr>
+    <h4>Giới tính:</h4> <select>
+        <option>Nam</option>
+        <option>Nữ</option>
+    </select><br><br>
+    <hr>
+    <button type="submit" >Xác nhận thêm</button>
+    {{!-- Họ và tên: <input type="text" name="txtName" placeholder="Name" /> <br>
+    <input type="file" name="image" />  <br>
+    <input type="text" name="txtLevel" placeholder="Level" /> <br> 
+    <input type="submit" name="txtName" placeholder="Add new" /> --}}
+</form>
+</body>
+
+
+</header>
+
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>

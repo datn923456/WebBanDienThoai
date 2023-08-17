@@ -1,0 +1,394 @@
+
+
+<header>
+    <section class="w-100 p-4">
+<!-- Navbar -->
+      <nav class="navbar navbar-expand-lg gy-3">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Navbar brand -->
+          <a class="navbar-brand me-2" href="/">
+            <img
+              src="https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/homev2/goiy-1.png"
+              height="30"
+              width="30"
+              alt="MDB Logo"
+              loading="lazy"
+              style="margin-top: -1px;"
+            />
+          </a>
+
+          <!-- Toggle button -->
+          <button
+            id = "menu"
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarButtonsExample"
+            aria-controls="navbarButtonsExample"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarButtonsExample">
+            <!-- Left links -->
+            <div class="col-xs-6 col-md-4">
+              
+              
+            </div>
+            
+            <!-- Left links -->
+            <div class="col-xs-6 col-md-4">
+              <form class="d-flex input-group w-auto" action="/site/search" method="GET">
+                <input
+                    name="search" 
+                    type="text"
+                    id="search"
+                    placeholder="Search"
+                    class="form-control rounded"
+                    {{!-- placeholder="Tìm sản phẩm..." --}}
+                    aria-label="Search"
+                    aria-describedby="search-addon"
+                />
+                <button id="search" type="submit" class="btn btn-info" ><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+            
+            <div id="logreg" class="col-xs-3 col-md-3 flex align-items-center">
+              <button type="button" class="btn btn-link px-3 me-2" data-toggle="modal" data-target="#myAdmin">Admin</button>
+              <button type="button" class="btn btn-link px-3 me-2" data-toggle="modal" data-target="#myModal1">Login</button>
+              <button type="button" class="btn btn-primary me-3" data-toggle="modal" data-target="#myModal">Sign up</button>
+            </div>
+          </div>
+          <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+<!-- Navbar -->
+    </section>
+
+{{!--Search--}}
+<script>
+  function myFunction() {
+     
+  }
+</script>
+
+<!-- The Modal Login-->
+<div class="modal" id="myAdmin">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <!-- Modal Header -->
+               <div class="modal-header">
+                  <h3 class="modal-title text-center" style="color: red;">ĐĂNG NHẬP ADMIN</h3>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               <!-- Modal body -->
+               <div class="modal-body">
+                  <form action="/admin" method="POST" onsubmit='return dangnhapadmin()'>
+                    <div class="form-group">
+                      <label class="control-label col-sm-1" for="username">USERNAME:</label>
+                      <div class="col-sm-13">          
+                        <input type="text" class="form-control" id="useradmin" placeholder="Enter username" name="username">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-1" for="password">PASSWORD:</label>
+                      <div class="col-sm-13">          
+                        <input type="password" class="form-control" id="pwadmin" placeholder="Enter password" name="password">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#dangnhap" >ĐĂNG NHẬP</button>
+                    </div>
+                  
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+<div class="modal" id="myModal1">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <!-- Modal Header -->
+               <div class="modal-header">
+                  <h3 class="modal-title text-center" style="color: red;">ĐĂNG NHẬP</h3>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               <!-- Modal body -->
+               <div class="modal-body">
+                  <form action="/login" method="POST" onsubmit='return dangnhap()'>
+                    <div class="form-group">
+                      <label class="control-label col-sm-1" for="username">USER:</label>
+                      <div class="col-sm-13">          
+                        <input type="text" class="form-control" id="user" placeholder="Enter user" name="username">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-1" for="password">Password:</label>
+                      <div class="col-sm-13">          
+                        <input type="password" class="form-control" id="pw" placeholder="Enter password" name="password">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#dangnhap" id="nutdangnhap">ĐĂNG NHẬP</button>
+                    </div>
+                  
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- The Modal Sign up-->
+      <div class="modal" id="myModal">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <!-- Modal Header -->
+               <div class="modal-header">
+                  <h3 class="modal-title text-center" style="color: red;">ĐĂNG KÝ</h3>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               <!-- Modal body -->
+               <div class="modal-body">
+                 <form action="/register" method="POST" onsubmit="return dangky()">
+                    <div class="form-group">
+                        <label class="control-label col-sm-1" for="username">Username:</label>
+                        <div class="col-sm-13">          
+                        <input type="text" class="form-control" id="username" placeholder="Enter user" name="username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-1" for="password">Password:</label>
+                        <div class="col-sm-13">          
+                        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" onkeyup='check();'>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-5 text-left" for="repassword">Nhập lại Password:</label>
+                      <div class="col-sm-13">          
+                      <input type="password" class="form-control" id="repassword" placeholder="Enter password" name="repassword" onkeyup='check();'>
+                      <span id='message'></span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-5 text-left" for="hoten">Họ và tên:</label>
+                      <div class="col-sm-13">          
+                      <input type="text" class="form-control" id="hoten" placeholder="Nhập họ và tên" name="hoten">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-5 text-left" for="sdt">Số điện thoại</label>
+                      <div class="col-sm-13">          
+                      <input type="text" class="form-control" id="sdt" placeholder="Nhập số điện thoại" name="sdt">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-5 text-left" for="email">Email:</label>
+                      <div class="col-sm-13">          
+                      <input type="email" class="form-control" id="email" placeholder="Nhập email" name="email">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-5 text-left" for="diachi">Địa chỉ:</label>
+                      <div class="col-sm-13">          
+                      <input type="text" class="form-control" id="diachi" placeholder="Nhập địa chỉ" name="diachi">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-5 text-left" for="ngaysinh">Ngày sinh:</label>
+                      <div class="col-sm-13">          
+                      <input type="date" class="form-control" id="ngaysinh" name="ngaysinh">
+                      </div>
+                      <br>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#dangkyuser">ĐĂNG KÝ</button>
+                    </div>
+                  
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+</header>
+
+<!-- body -->
+<body>
+
+  <section class="">
+    <a href="">
+      <img width="1885" src="https://cdn.tgdd.vn/2022/04/campaign/1920x380-2-1920x380-2.jpg" alt="">
+    </a>
+  </section>
+
+  <section class="padding-y">
+    <div class="container">
+      <header class="secion-heading mt-3">
+        <h3 class="section-title">Sản phẩm</h3>
+      </header>
+      <br>
+      <div class="row">
+
+        {{#each courses}}
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <figure class="card card-product-grid">
+            <div class="img-wrap">
+              <a href="/home/{{this.slug}}" class=""><img width="308" height="240" src="{{this.thumbnail}}" alt="{{this.name}}"></a>
+            </div>
+            <figcaption class="info-wrap border-top" style="text-align:center;">
+              <a href="/home/{{this.slug}}"><p class="title mb-2">{{this.name}}</p></a>
+              <div class="price-wrap">
+                <span class="price" style="color:red;">{{this.price}}</span>
+              </div>
+              <a href="/home/{{this.slug}}" class="btn btn-primary mt-5" style="display:inline-block;">Xem sản phẩm</a>
+            </figcaption>
+          </figure>
+        </div>
+        {{/each}}
+
+      </div>
+    </div>
+  </section>
+        
+      </div>
+    </div>
+  </div>
+</body>
+
+<!--footer-->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">Shop.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+<script>
+    var check = function() {
+            if (document.getElementById('password').value ==
+                document.getElementById('repassword').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'trùng khớp';
+            } else {
+                document.getElementById('message').style.color = 'blue';
+                document.getElementById('message').innerHTML = 'không trùng khớp';
+            }
+        }
+
+        function dangky() {
+            var username = document.getElementById("username").value;
+            var sdt = document.getElementById("sdt").value;
+            var hoten = document.getElementById("hoten").value;
+            var email = document.getElementById("email").value;
+            var pw = document.getElementById("password").value;
+            var repw = document.getElementById("repassword").value;
+            var diachi = document.getElementById("diachi").value;
+
+            var regemail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+            
+            if (username.trim() == "") {
+                alert("username không được để trống hoặc không hợp lệ");
+                return false;
+            }
+            if(pw == "" || pw == null){
+               alert("password không được để trống hoặc không hợp lệ");
+               return false;
+            }
+            if (document.getElementById("message").innerHTML == 'không trùng khớp') {
+               alert("password không trùng khớp");
+               return false;
+           }
+            if (hoten.trim() == "") {
+               alert("họ và tên không được để trống");
+               return false;
+           }
+            if (sdt.trim() == "") {
+                alert("Số điện thoại không được để trống");
+                return false;
+            }
+            if (!regemail.test(email)) {
+                alert("email không được để trống hoặc không hợp lệ");
+                return false;
+            }
+            if (diachi.trim() == "") {
+                alert("địa chỉ không được để trống");
+                return false;
+            }
+            alert("Đăng ký thành công");
+            return true;
+        }
+
+        function dangnhap(){
+          var username = document.getElementById("user").value;
+          var password = document.getElementById("pw").value;
+
+            if (username.trim() == "") {
+                alert("username không được để trống hoặc không hợp lệ");
+                return false;
+            }
+            if(password == "" || password == null ){
+               alert("password không được để trống hoặc không hợp lệ");
+               return false;
+            }
+            return true;
+        }
+        function dangnhapadmin(){
+          var username = document.getElementById("useradmin").value;
+          var password = document.getElementById("pwadmin").value;
+
+            if (username.trim() == "") {
+                alert("username không được để trống hoặc không hợp lệ");
+                return false;
+            }
+            if(password == "" || password == null ){
+               alert("password không được để trống hoặc không hợp lệ");
+               return false;
+            }
+            return true;
+        }
+        
+  </script>
